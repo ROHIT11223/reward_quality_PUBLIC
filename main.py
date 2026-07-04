@@ -2,9 +2,7 @@ import sys
 import os
 import pandas as pd
 from datetime import datetime
-from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
-                             QHBoxLayout, QLabel, QLineEdit, QComboBox, QSpinBox,
-                             QPushButton, QGridLayout, QMessageBox, QFileDialog, QScrollArea)
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QComboBox, QSpinBox, QPushButton, QGridLayout, QMessageBox, QFileDialog, QScrollArea)
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap, QFont, QIcon
 
