@@ -1,0 +1,11 @@
+RDE_Name,Error_Name,Error_Weight
+Alice,Silly Error,-5
+Bob,Formatting,-2
+Charlie,Calculation,-10
+Diana,Spelling,-1
+Eve,Logic,-8
+Frank,Missing Data,-6
+Grace,Late Submission,-3
+Hank,Client Name Error,-15
+Ivy,Date Error,-4
+Jack,Compliance,-20

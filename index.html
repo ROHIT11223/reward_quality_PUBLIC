@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Reward System</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SheetJS for Excel Reading/Writing -->
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <img src="support_files/logo.png" alt="Company Logo" id="company-logo" onerror="this.src='https://via.placeholder.com/60?text=QR'">
+                <div>
+                    <h1>Quality Reward</h1>
+                    <span class="version-badge">v1.0.0</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button id="exportBtn" class="btn-primary glow-effect">Download Database</button>
+            </div>
+        </header>
+
+        <!-- Setup / Config Section -->
+        <section class="setup-section">
+            <h2>Configuration Setup</h2>
+            <p>Please load your configuration Excel/CSV file to initialize the system.</p>
+            <div class="file-upload">
+                <input type="file" id="configFile" accept=".xlsx, .xls, .csv">
+                <label for="configFile" class="file-label">Choose Config File</label>
+                <span id="file-status">No file chosen</span>
+            </div>
+        </section>
+
+        <!-- Main Form Section (Hidden until config loaded) -->
+        <main id="main-form" class="hidden">
+            <div class="form-group row">
+                <div class="input-container half">
+                    <label for="docName">Document Name</label>
+                    <input type="text" id="docName" placeholder="Enter document name..." autocomplete="off">
+                </div>
+                <div class="input-container half">
+                    <label for="rdeName">User Name (RDE)</label>
+                    <select id="rdeName">
+                        <option value="" disabled selected>Select User...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="error-section">
+                <h2>Error Tracking</h2>
+                <div id="error-list" class="error-grid">
+                    <!-- Error items will be dynamically injected here -->
+                </div>
+            </div>
+
+            <div class="bonus-section">
+                <h2>Bonus Points</h2>
+                <div class="bonus-control">
+                    <label for="bonusPoints">Award bonus for good quality:</label>
+                    <input type="number" id="bonusPoints" value="0" min="0">
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <div class="score-preview">
+                    <span>Estimated Score:</span>
+                    <strong id="previewScore">0</strong>
+                </div>
+                <button id="submitBtn" class="btn-submit">Submit Record</button>
+            </div>
+        </main>
+        
+        <div id="notification" class="notification hidden"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
